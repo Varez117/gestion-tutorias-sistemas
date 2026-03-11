@@ -1,4 +1,4 @@
-
+const NGROK_URL = "https://tingly-tawna-irascibly.ngrok-free.dev";
 
 document.addEventListener("DOMContentLoaded", () => {
   let db = JSON.parse(localStorage.getItem("tutoria_db_v6"));
