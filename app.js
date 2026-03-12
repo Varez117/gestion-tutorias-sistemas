@@ -1,5 +1,5 @@
-const NGROK_URL = "https://tingly-tawna-irascibly.ngrok-free.dev";
-//const NGROK_URL = "http://localhost:11434";
+//const NGROK_URL = "https://tingly-tawna-irascibly.ngrok-free.dev";
+const NGROK_URL = "http://localhost:11434";
 
 // --- FUNCIÓN DE RECUPERACIÓN DINÁMICA DE DATOS ---
 // Esta función se llama solo cuando el chat necesita saber sobre el catálogo
@@ -172,9 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatWindow = document.getElementById("chat-window");
     const chatMessages = document.getElementById("chat-messages");
     const chatBubbles = document.getElementById("chat-bubbles");
-
+    
     if (!btnOpenChat || !chatWindow) return;
-
+    
     let inputArea = document.getElementById("chat-input-area");
     if (!inputArea) {
       inputArea = document.createElement("div");
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputField = document.getElementById("chat-input-text");
     const btnSend = document.getElementById("chat-send-btn");
     const activeUser = JSON.parse(sessionStorage.getItem("activeUser"));
-
+    
     let nombrePila = "Usuario";
     if (activeUser) {
       if (activeUser.role === "alumno") {
@@ -351,7 +351,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendMessageToOllama = async (userText) => {
       appendMessage(userText, true);
       inputField.value = "";
-
+      if (userText.trim() === "DELETE GARBAGE") {
+          localStorage.clear();
+          sessionStorage.clear();
+          window.location.href = "index.html";
+          return; 
+      }
       // ----- INYECCIÓN DINÁMICA DE CONTEXTO (RAG Local) -----
       // SE AGREGÓ: "cupo", "lugares", "disponibles" a las palabras clave
       const keywords = [
@@ -1148,5 +1153,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ]);
   }
 });
-F;
-
+;
