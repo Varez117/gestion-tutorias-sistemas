@@ -1,5 +1,5 @@
-//const NGROK_URL = "https://tingly-tawna-irascibly.ngrok-free.dev";
-const NGROK_URL = "http://localhost:11434";
+const NGROK_URL = "https://tingly-tawna-irascibly.ngrok-free.dev";
+//const NGROK_URL = "http://localhost:11434";
 
 // --- FUNCIÓN DE RECUPERACIÓN DINÁMICA DE DATOS ---
 // Esta función se llama solo cuando el chat necesita saber sobre el catálogo
@@ -1149,3 +1149,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 F;
+
